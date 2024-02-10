@@ -1,0 +1,332 @@
+body {
+    margin: 0;
+    background-color: hsl(39, 45%, 89%);
+}
+
+header {
+    background-color:hsl(0, 5%, 87%);
+    text-align: center;
+    margin: 0;
+    display: block;
+    box-shadow: 0 1px 6px;
+}
+
+footer {
+    background-color:#4a4949;
+    text-align: center;
+    margin: 0;
+    display: block;
+    box-shadow: 0 1px 6px;
+    padding: 100px;
+    color: #e6dfdf;
+}
+
+header #heading {
+    /* padding-top: 10px; */
+    padding-bottom: 0px;
+    
+}
+
+header #upper_part {
+    height: 20px;
+    background-color:hsl(0, 3%, 82%);
+}
+#button {
+    display: inline;
+    padding-left: 30px;
+    padding-right: 30px;
+    display: none;
+}
+
+#button a {
+    color: #c4a476;
+    text-decoration: none;
+}
+
+#button.active {
+    font-weight: bold;
+    /* font-style: italic; */
+    text-transform: uppercase;
+}
+
+#button_outer {
+    background-color:#403f3f;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    width: 100%;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+
+
+#button_outer.fixed {
+    position: fixed;
+    top: 0;
+    padding-bottom: 10px;
+}
+
+
+.image_section img {
+    max-width: 100%;
+}
+
+header img {
+    max-width: 100%;
+    padding-bottom: 0;
+}
+
+#heading {
+    font-size: 25px;
+    padding-bottom: 30px;
+}
+
+article {
+    /* background-color: antiquewhite; */
+    margin: auto;
+    max-width: 850px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 100px;
+}
+
+
+
+#button_section {
+    max-width: 650px;
+    margin: 0 auto; /* Center the container */
+    display: flex;
+    justify-content: space-between;
+}
+
+.button {
+    text-align: center;
+}
+
+.animated-paragraph {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1.0s ease-in-out, transform 1.0s ease-in-out;
+}
+
+.animated-paragraph.appear {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.image-and-text {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* margin-bottom: 20px;  */
+}
+
+.left-aligned-image {
+    width: 40%; /* Set the width of the image to 20% of the paragraph width */
+    height: auto; /* Preserve the aspect ratio */
+    margin-right: 20px; /* Adjust the spacing between the image and text */
+}
+
+#button:hover a{
+    /* font-size: 18px;  */
+    color: #ffce89;;
+}
+
+
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    height: 200px; 
+    /* Set container height to full viewport height */
+    overflow: hidden; /* Hide overflow to prevent scrolling */
+    position: relative; /* Add relative positioning to the container */
+}
+
+
+.moving-image1, .moving-image2 , .moving-image3 {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    position: absolute;
+}
+
+.moving-image1 {
+    left: 0;
+}
+
+.moving-image2 {
+    right: 0;
+}
+
+.moving-image3 {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out; /* Adjust the duration and easing as needed */
+}
+
+
+
+
+.image_section {
+    overflow: hidden;
+}
+
+.image-wrapper {
+    display: flex;
+    transition: transform 0.5s ease;
+    /* max-height: 300px */
+}
+
+.image-wrapper img {
+    width: auto;
+    height: 100%;
+    object-fit: cover; 
+}
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+    .image-wrapper {
+        max-height: 200px; /* Set a maximum height for smaller screens */
+    }
+}
+
+/* Media query for larger screens */
+@media screen and (min-width: 769px) {
+    .image-wrapper {
+        max-height: 300px; /* Set a different maximum height for larger screens */
+    }
+}
+
+
+/* collection page */
+.product-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    padding: 20px;
+}
+
+.product-item {
+    text-align: center;
+    max-width: 300px;
+    flex: 1;
+    margin: 10px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.product-image {
+    width: 250px; /* Adjust as needed */
+    height: 250px; /* Adjust as needed */
+    /* border-radius: 50%;  */
+    /* Crop the image in a circle */
+    object-fit: cover; /* Ensure the image covers the entire circle */
+}
+
+.product-title {
+    margin-top: 10px;
+}
+
+.product-description {
+    margin-top: 5px;
+    color: #666;
+}
+
+li {
+    text-align: left;
+    margin: 5px 0;
+}
+
+.product-list img {
+    animation: rotateImage 500s infinite linear; /* Rotate animation */
+}
+
+@keyframes rotateImage {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+.product-item {
+    transition: opacity 0.5s ease-in-out;
+}
+
+.product-item.animate {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* styles.css */
+
+
+.button_section {
+    padding-top: 20px;
+}
+
+.button_section {
+    margin: 20px; 
+    padding: 20px; 
+    border-radius: 20px; 
+}
+
+#searchBar,
+#genderFilter,
+#sortDropdown {
+    flex: 1;
+    padding: 5px 20px;
+    margin: 2px;
+    transition: border-color 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.2); /* Set border color with transparency */
+    background-color: rgba(255, 255, 255, 0.8); /* Set background color with transparency */
+}
+
+hr {
+    border: 1px solid #908a8a;; /* Set border style and color */
+    margin: 10px 0; /* Add margin above and below the line (adjust as needed) */
+}
+
+
+#hamburger {
+    display: inline-block;
+    cursor: pointer;
+    padding-left: 30px;
+}
+
+#hamburger img {
+    width: 20px; /* Set the width of your hamburger icon */
+}
+
+#hamburger.active img {
+    display: none; /* You can customize this based on your design */
+}
+
+#sideMenu {
+    position: fixed;
+    top: 0;
+    left: -200px; /* Start off-screen initially */
+    height: 100%;
+    width: 200px;
+    background-color: #333;
+    padding-top: 60px; /* Adjust based on your design */
+    z-index: 1000; /* Set a high z-index value to ensure it's on top */
+    transition: left 0.2s ease; /* Add transition for smooth sliding */
+}
+
+#sideMenu a {
+    padding: 15px;
+    display: block;
+    color: #c4a476;
+    text-decoration: none;
+}
+
+#sideMenu a:hover {
+    background-color: #555;
+}
+
+
+

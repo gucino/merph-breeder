@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Merph title</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    </head>
+    <body>
+        <header>
+            <div id = 'heading'>
+                <img src="image/logo_2.png" alt="">
+            </div>
+            <div id="button_outer">
+                <div id="button_section">
+                    <div id = 'button'>
+                        <a href="index.html">Home</a>
+                    </div>
+                    <div  id = 'button'>
+                        <a href="index_breed.html">Breeding</a>
+                    </div>
+                    <div  id = 'button'   class="active">
+                        <a href="index_collection.html">Collection</a>
+                    </div>
+                    <div  id = 'button'>
+                        <a href="index_2.html">Contact us</a>
+                    </div>
+                    <div id='hamburger' onclick="toggleMenu()">
+                        <img src="image/Hamburger_icon.png" alt="Hamburger Icon">
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div id="sideMenu">
+            <a href="#" onclick="closeMenuAndRedirect('index.html')">Home</a>
+            <a href="#"  onclick="closeMenuAndRedirect('index_breed.html')">Breeding</a>
+            <a href="#"  onclick="closeMenuAndRedirect('index_collection.html')">Collection</a>
+            <a href="index_2.html">Contact us</a>
+            <a href="#" onclick="closeMenu()">Close [x]</a>
+            <!-- Add more links as needed -->
+        </div>
+        <article>
+
+    
+    <div class = "animated-paragraph">
+        <div class = button_section>
+            <!-- Search bar -->
+            <input type="text" id="searchBar" placeholder="Search..." oninput="performSearch()">
+    
+            <!-- Gender filter dropdown -->
+            <select id="genderFilter" onchange="performSearch()">
+                <option value="">Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+    
+            <!-- Dropdown for sorting -->
+            <label for="sortDropdown"></label>
+            <select id="sortDropdown" onchange="sortProducts()">
+                <option value=""> Sort By </option>
+                <option value="priceAsc">Price - Low to High</option>
+                <option value="priceDesc">Price - High to Low</option>
+                <option value="hatchAsc">Hatch Date - Ascending</option>
+                <option value="hatchDesc">Hatch Date - Descending</option>
+                <option value="codeAsc">Code - A to Z</option>
+                <option value="codeDesc">Code - Z to A</option>
+            </select>
+            
+        </div>
+    <hr>
+    </div>
+            <div class="animated-paragraph"> 
+            <div class="product-list">
+                <!-- START_SECTION --><div class="product-item">
+<img src="collection/image/S__11640864.jpg" class="product-image" >
+<h3 class="product-title">Orange Dream Pinstripe Yellowbelly Cryptic Het Desert Ghost</h3>
+
+                        <ul>
+                            <li>code: 23ODPINYBCThDGM1</li>
+                            <li>sex: male</li>
+                            <li>hatch: 2023-04-15</li>
+                            <li>remark: </li>
+                            <li>price: 95,000 Baht</li>
+                        </ul>
+                        </div>
+<div class="product-item">
+<img src="collection/image/S__11640865.jpg" class="product-image" >
+<h3 class="product-title">Dragonfly Yellowbelly Het Desert Ghost 66% Het Cryptic</h3>
+
+                        <ul>
+                            <li>code: 23DFYBhDGhCTF1</li>
+                            <li>sex: female</li>
+                            <li>hatch: 2023-04-15</li>
+                            <li>remark: </li>
+                            <li>price: 39,000 Baht</li>
+                        </ul>
+                        </div>
+<div class="product-item">
+<img src="collection/image/S__11640866.jpg" class="product-image" >
+<h3 class="product-title">Fire Yellowbelly Piebald</h3>
+
+                        <ul>
+                            <li>code: 23FYBPIEDF1</li>
+                            <li>sex: male</li>
+                            <li>hatch: 2023-05-03</li>
+                            <li>remark: </li>
+                            <li>price: 39,000 Baht</li>
+                        </ul>
+                        </div>
+<div class="product-item">
+<img src="collection/image/S__11640867.jpg" class="product-image" >
+<h3 class="product-title">Orange Dream Fire Piebald</h3>
+
+                        <ul>
+                            <li>code: 23ODFPIEDM1</li>
+                            <li>sex: female</li>
+                            <li>hatch: 2023-05-03</li>
+                            <li>remark: </li>
+                            <li>price: 55,000 Baht</li>
+                        </ul>
+                        </div>
+<div class="product-item">
+<img src="collection/image/S__11640868.jpg" class="product-image" >
+<h3 class="product-title">Orange Dream Pinstripe Yellowbelly Cryptic Het Desert Ghost</h3>
+
+                        <ul>
+                            <li>code: 23ODPINYBCThDGM1</li>
+                            <li>sex: male</li>
+                            <li>hatch: 2023-04-15</li>
+                            <li>remark: </li>
+                            <li>price: 95,000 Baht</li>
+                        </ul>
+                        </div>
+<div class="product-item">
+<img src="collection/image/S__11640869.jpg" class="product-image" >
+<h3 class="product-title">Dragonfly Yellowbelly Het Desert Ghost 66% Het Cryptic</h3>
+
+                        <ul>
+                            <li>code: 23DFYBhDGhCTF1</li>
+                            <li>sex: female</li>
+                            <li>hatch: 2023-04-15</li>
+                            <li>remark: </li>
+                            <li>price: 39,000 Baht</li>
+                        </ul>
+                        </div>
+<div class="product-item">
+<img src="collection/image/S__11640873.jpg" class="product-image" >
+<h3 class="product-title">Fire Yellowbelly Piebald</h3>
+
+                        <ul>
+                            <li>code: 23FYBPIEDF1</li>
+                            <li>sex: male</li>
+                            <li>hatch: 2023-05-03</li>
+                            <li>remark: </li>
+                            <li>price: 39,000 Baht</li>
+                        </ul>
+                        </div>
+<!-- END_SECTION -->
+    
+            </div>
+        </div>
+        </article>
+
+
+        
+        <script src="script.js"></script>
+            
+          
+    </body>
+    <footer>
+        <div>some footer</div>
+        <div>tel: 083xxxxxxx | email: merph.w@python.com</div>
+        <!-- <div>email: merph.w@python.com</div> -->
+        <div>2023 merph ball python breeder</div>
+    </footer>
+</html>
