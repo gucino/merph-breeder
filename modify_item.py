@@ -32,7 +32,7 @@ if user_input == 'y':
     run_bash("git add collection/*")    
 
     # HTML collection
-    run_bash("git add code/index_collection.html")    
+    run_bash("git add index_collection.html")    
 
     # Commit
     run_bash(f"git commit -m'change from back office {datetime.now()}'")   
