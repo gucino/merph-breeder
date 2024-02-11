@@ -1,7 +1,42 @@
 
+// Initial check on page load
+window.addEventListener('load', function() {
+    checkOverflow();
+});
+
 window.addEventListener('resize', function() {
     checkOverflow();
 });
+
+// function checkOverflow() {
+//     var buttonOuter = document.getElementById('button_outer');
+//     var testButton = document.getElementById('hamburger');
+
+//     // Check if screen size is less than 768 pixels
+//     if (window.innerWidth < 550) {
+//         // Do something specific for small screens
+//         // You can modify this block as needed for your requirements
+//         document.querySelectorAll('#button').forEach(function(button) {
+//             button.style.display = 'none';
+//         });
+//         testButton.style.display = 'inline-block';
+//     } else {
+//         // Original overflow check
+//         if (buttonOuter.scrollWidth > buttonOuter.clientWidth) {
+//             // Overflow detected
+//             document.querySelectorAll('#button').forEach(function(button) {
+//                 button.style.display = 'none';
+//             });
+//             testButton.style.display = 'inline-block';
+//         } else {
+//             // No overflow
+//             document.querySelectorAll('#button').forEach(function(button) {
+//                 button.style.display = 'inline-block';
+//             });
+//             testButton.style.display = 'none';
+//         }
+//     }
+// }
 
 function checkOverflow() {
     var buttonOuter = document.getElementById('button_outer');
@@ -16,28 +51,13 @@ function checkOverflow() {
         });
         testButton.style.display = 'inline-block';
     } else {
-        // Original overflow check
-        if (buttonOuter.scrollWidth > buttonOuter.clientWidth) {
-            // Overflow detected
-            document.querySelectorAll('#button').forEach(function(button) {
-                button.style.display = 'none';
-            });
-            testButton.style.display = 'inline-block';
-        } else {
-            // No overflow
-            document.querySelectorAll('#button').forEach(function(button) {
-                button.style.display = 'inline-block';
-            });
-            testButton.style.display = 'none';
-        }
+        // No overflow
+        document.querySelectorAll('#button').forEach(function(button) {
+            button.style.display = 'inline-block';
+        });
+        testButton.style.display = 'none';
     }
 }
-
-
-// Initial check on page load
-window.addEventListener('load', function() {
-    checkOverflow();
-});
 
 
 // fix menu bar once header disappear
