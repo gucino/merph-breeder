@@ -3,9 +3,9 @@ body {
     background-color: hsl(39, 45%, 89%);
 }
 
-/* #content {
+#content {
     display: none;
-  } */
+  }
 
 header {
     background-color:hsl(0, 5%, 87%);
@@ -256,14 +256,14 @@ li {
 }
 
 
-.product-item {
+/* .product-item {
     transition: opacity 0.5s ease-in-out;
 }
 
 .product-item.animate {
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
-}
+} */
 
 /* styles.css */
 
