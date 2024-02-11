@@ -3,6 +3,10 @@ body {
     background-color: hsl(39, 45%, 89%);
 }
 
+#content {
+    display: none; /* Initially hide the content */
+  }
+
 header {
     background-color:hsl(0, 5%, 87%);
     text-align: center;
