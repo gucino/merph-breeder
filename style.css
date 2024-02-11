@@ -107,7 +107,7 @@ article {
 .animated-paragraph {
     opacity: 0;
     transform: translateY(20px);
-    transition: opacity 1.0s ease-in-out, transform 1.0s ease-in-out;
+    transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out;
 }
 
 .animated-paragraph.appear {
@@ -252,14 +252,14 @@ li {
 }
 
 
-.product-item {
+/* .product-item {
     transition: opacity 0.5s ease-in-out;
 }
 
 .product-item.animate {
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
-}
+} */
 
 /* styles.css */
 

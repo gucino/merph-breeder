@@ -107,7 +107,7 @@ function showNextImage() {
     $('.image-wrapper').css('transform', 'translateX(' + translateValue + ')');
 }
 
-// Set an interval to show the next image every 3 seconds
+// Set an interval to show the next image every 3 seconds 60000
 setInterval(showNextImage, 60000);
 });
 
@@ -214,7 +214,7 @@ function sortProducts() {
         products.forEach(function (product) {
             product.classList.remove('animate');
         });
-    }, 250); // Adjust the timeout based
+    }, 100); // Adjust the timeout based
 
 }
 
@@ -258,15 +258,15 @@ function performSearch() {
     productsNotShow.forEach(function (product) {
         setTimeout(function () {
             product.style.display = 'none';
-        }, 500); 
+        }, 100); 
     });
-    // Apply the 'animate' class to the visible products
+    // Apply the 'animate' class to the visible produ
     productsToShow.forEach(function (product) {
         product.style.display = 'block';
         // product.classList.remove('animate');
         setTimeout(function () {
             product.classList.remove('animate');
-        }, 500); 
+        }, 100); 
     });
 }
 
