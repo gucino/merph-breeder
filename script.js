@@ -205,10 +205,9 @@ function performSearch() {
     var searchTerm = document.getElementById('searchBar').value.toLowerCase();
     var searchTermsArray = searchTerm.split(' ').filter(Boolean);
     var genderFilter = document.getElementById('genderFilter').value.toLowerCase();
-
     var productItems = document.querySelectorAll('.product-item');
-    // var productItems = document.querySelectorAll('.animated-paragraph');
-
+    console.log('search: ' + searchTerm)
+    console.log(searchTerm === '')
 
     // Identify products that match the criteria
     var productsToShow = [];
@@ -217,7 +216,6 @@ function performSearch() {
         var productTitle = product.querySelector('.product-title').textContent.toLowerCase();
         var listItems = product.querySelectorAll('ul li');
         var productGender = product.querySelector('ul li:nth-child(2)').textContent.toLowerCase().split(': ')[1]; // Assuming gender is the second list item
-
         var matchFound = (searchTerm === '' || searchTermsArray.some(function (term) {
             return productTitle.includes(term) || Array.from(listItems).some(function (li) {
                 return li.textContent.toLowerCase().includes(term);
@@ -232,8 +230,6 @@ function performSearch() {
             // product.style.display = 'none';
         }
     });
-
-    
     // Apply the 'animate' class to the visible products
     productItems.forEach(function (product) {
         // product.style.display = 'block';
@@ -254,9 +250,6 @@ function performSearch() {
             product.classList.remove('animate');
         }, 500); 
     });
-
-
-
 }
 
 
