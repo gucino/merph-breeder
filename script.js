@@ -1,10 +1,70 @@
-// mobile compatible
+
+// // Initial check on page load
+// window.addEventListener('load', function() {
+//     console.log('load')
+//     checkOverflow();
+// });
+
+// window.addEventListener('resize', function() {
+//     checkOverflow();
+// });
+
+// function checkOverflow() {
+//     var testButton = document.getElementById('hamburger');
+
+//     // Check if screen size is less than 768 pixels
+//     if (window.innerWidth < 550) {
+//         // Do something specific for small screens
+//         document.querySelectorAll('#button').forEach(function(button) {
+//             button.style.display = 'none';
+//         });
+//         testButton.style.display = 'inline-block';
+//     } else {
+//         // No overflow
+//         document.querySelectorAll('#button').forEach(function(button) {
+//             button.style.display = 'inline-block';
+//         });
+//         testButton.style.display = 'none';
+//     }
+// }
+
+// window.addEventListener('load', function() {
+//     var testButton = document.getElementById('hamburger');
+//     var buttons = document.querySelectorAll('#button');
+
+//     console.log('remove assync');
+//     checkOverflow();
+
+//     window.addEventListener('resize', function() {
+//         checkOverflow();
+//     });
+
+//     function checkOverflow() {
+//         var screenWidth = window.innerWidth;
+//         var isSmallScreen = screenWidth < 550;
+
+//         buttons.forEach(function(button) {
+//             if (isSmallScreen) {
+//                 button.style.display = 'none';
+//             } else {
+//                 button.style.display = 'inline-block';
+//             }
+//         });
+
+//         testButton.style.display = isSmallScreen ? 'inline-block' : 'none';
+//     }
+// });
+
+
+
+
+
 window.onload = function() {
     var testButton = document.getElementById('hamburger');
     var buttons = document.querySelectorAll('#button');
     var content = document.getElementById('content');
 
-    console.log('dont show if not yet load');
+    // console.log('dont show if not yet load');
     checkOverflow();
 
     window.addEventListener('resize', function() {
@@ -23,6 +83,27 @@ window.onload = function() {
         content.style.display = 'block';
     }
 };
+
+// fix menu bar once header disappear
+document.addEventListener("DOMContentLoaded", function() {
+    var heading = document.getElementById("heading");
+    var buttonOuter = document.getElementById("button_outer");
+    var article = document.querySelector("article"); // Adjust the selector based on your actual structure
+    // var bigimage = document.querySelector('.big_image');
+
+    window.addEventListener("scroll", function() {
+        var totalPadding = 10 + buttonOuter.offsetHeight;
+        if (window.scrollY > heading.offsetHeight) {
+            buttonOuter.classList.add("fixed");
+            article.style.paddingTop = totalPadding + "px";
+            // bigimage.style.paddingTop = totalPadding - 10 + "px";
+        } else {
+            buttonOuter.classList.remove("fixed");
+            article.style.paddingTop = "10px";
+            // bigimage.style.paddingTop = "0px";
+        }
+    });
+});
 
 // animated paragraph
 document.addEventListener("DOMContentLoaded", function() {
