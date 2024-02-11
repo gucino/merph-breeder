@@ -32,7 +32,7 @@ window.addEventListener('load', function() {
     var testButton = document.getElementById('hamburger');
     var buttons = document.querySelectorAll('#button');
 
-    console.log('load');
+    console.log('async fuction');
     checkOverflow();
 
     window.addEventListener('resize', function() {
