@@ -64,7 +64,7 @@ window.onload = function() {
     var buttons = document.querySelectorAll('#button');
     var content = document.getElementById('content');
 
-    console.log('remove async');
+    console.log('dont show if not yet load');
     checkOverflow();
 
     window.addEventListener('resize', function() {
