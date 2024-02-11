@@ -2,11 +2,11 @@ import os
 import pandas as pd
 import numpy as np
 
-# Determine path 
+# Determine path test
 folder_path = "collection"
 html_file_path = "index_collection.html"
 mapping_df = pd.read_csv('collection/info.csv')
-
+ 
 # Get a list of all jpg files in the collection folder
 image_files = [f for f in os.listdir(folder_path) if f.lower().endswith(".jpg")]
 
