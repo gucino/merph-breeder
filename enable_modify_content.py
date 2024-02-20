@@ -32,13 +32,15 @@ def enable_editable(file_name):
         article_tag['contenteditable'] = 'true'
 
     # Create a new <button> tag and add it after the <article> element if it doesn't exist
+    header_tag = soup.find('header')
     save_button_tag = soup.find('button', {'id': 'saveButton'})
     if not save_button_tag:
         save_button_tag = soup.new_tag('button', id='saveButton')
         save_button_tag.string = 'Save'
         
-        if article_tag:
-            article_tag.insert_after(save_button_tag)
+        if header_tag:
+            # article_tag.insert_after(save_button_tag)
+            header_tag.insert_before(save_button_tag)
 
     # Save the modified HTML content back to the file
     with open(file_name, 'w') as file:

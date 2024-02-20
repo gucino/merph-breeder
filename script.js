@@ -337,6 +337,20 @@ function closeMenuAndRedirect(url) {
 
 // download modify content
 document.getElementById('saveButton').addEventListener('click', function () {
+
+    // Get all elements with the class 'animated-paragraph'
+    var sectionElements = document.querySelectorAll('.animated-paragraph');
+
+    // Iterate over each element
+    sectionElements.forEach(function (element) {
+        // Check if the element has the 'appear' class
+        if (element.classList.contains('appear')) {
+            // Remove the 'appear' class
+            element.classList.remove('appear');
+        }
+    });
+
+    // download
     var entireHtml = document.documentElement.outerHTML;
     var blob = new Blob([entireHtml], { type: 'text/html' });
     var a = document.createElement('a');
