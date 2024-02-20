@@ -333,3 +333,18 @@ function closeMenuAndRedirect(url) {
     sideMenu.style.left = "-200px";
 }
 
+
+
+// download modify content
+document.getElementById('saveButton').addEventListener('click', function () {
+    var entireHtml = document.documentElement.outerHTML;
+    var blob = new Blob([entireHtml], { type: 'text/html' });
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = window.location.pathname.split('/').pop();
+    a.style.display = 'none';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+});
+

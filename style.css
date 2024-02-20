@@ -243,8 +243,8 @@ li {
     margin: 5px 0;
 }
 
-.product-list img {
-    animation: rotateImage 500s infinite linear; /* Rotate animation */
+/* .product-list img {
+    animation: rotateImage 500s infinite linear; 
 }
 
 @keyframes rotateImage {
@@ -254,7 +254,7 @@ li {
     to {
         transform: rotate(360deg);
     }
-}
+} */
 
 
 /* .product-item {
