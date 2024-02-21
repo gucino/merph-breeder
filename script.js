@@ -1,64 +1,4 @@
 
-// // Initial check on page load
-// window.addEventListener('load', function() {
-//     console.log('load')
-//     checkOverflow();
-// });
-
-// window.addEventListener('resize', function() {
-//     checkOverflow();
-// });
-
-// function checkOverflow() {
-//     var testButton = document.getElementById('hamburger');
-
-//     // Check if screen size is less than 768 pixels
-//     if (window.innerWidth < 550) {
-//         // Do something specific for small screens
-//         document.querySelectorAll('#button').forEach(function(button) {
-//             button.style.display = 'none';
-//         });
-//         testButton.style.display = 'inline-block';
-//     } else {
-//         // No overflow
-//         document.querySelectorAll('#button').forEach(function(button) {
-//             button.style.display = 'inline-block';
-//         });
-//         testButton.style.display = 'none';
-//     }
-// }
-
-// window.addEventListener('load', function() {
-//     var testButton = document.getElementById('hamburger');
-//     var buttons = document.querySelectorAll('#button');
-
-//     console.log('remove assync');
-//     checkOverflow();
-
-//     window.addEventListener('resize', function() {
-//         checkOverflow();
-//     });
-
-//     function checkOverflow() {
-//         var screenWidth = window.innerWidth;
-//         var isSmallScreen = screenWidth < 550;
-
-//         buttons.forEach(function(button) {
-//             if (isSmallScreen) {
-//                 button.style.display = 'none';
-//             } else {
-//                 button.style.display = 'inline-block';
-//             }
-//         });
-
-//         testButton.style.display = isSmallScreen ? 'inline-block' : 'none';
-//     }
-// });
-
-
-
-
-
 window.onload = function() {
     var testButton = document.getElementById('hamburger');
     var buttons = document.querySelectorAll('#button');
@@ -193,7 +133,7 @@ function sortProducts() {
 
     // Sort by what
     var sortBy = document.getElementById('sortDropdown').value;
-
+    
     // Add class for animation before sorting
     products.forEach(function (product) {
         product.classList.add('animate');
@@ -207,8 +147,21 @@ function sortProducts() {
             valueA = parseInt(a.querySelector('li:nth-child(5)').textContent.split(': ')[1]);
             valueB = parseInt(b.querySelector('li:nth-child(5)').textContent.split(': ')[1]);
         } else if (sortBy === 'hatchAsc' || sortBy === 'hatchDesc') {
-            valueA = new Date(a.querySelector('li:nth-child(3)').textContent.split(': ')[1]).getTime();
-            valueB = new Date(b.querySelector('li:nth-child(3)').textContent.split(': ')[1]).getTime();
+
+            // Extract date
+            var date_A = a.querySelector('li:nth-child(3)').textContent.split(': ')[1];
+            var date_B = b.querySelector('li:nth-child(3)').textContent.split(': ')[1];
+
+            // Format to mm/dd/yyyy
+            let parts_A = date_A.split("/");
+            let formattedDate_A = `${parts_A[1]}/${parts_A[0]}/${parts_A[2]}`;
+            let parts_B = date_B.split("/");
+            let formattedDate_B = `${parts_B[1]}/${parts_B[0]}/${parts_B[2]}`;
+
+            // Convert to time
+            valueA = new Date(formattedDate_A).getTime();
+            valueB = new Date(formattedDate_B).getTime();
+            console.log(formattedDate_A + ' to ' + new Date(formattedDate_A).getTime())
         } else if (sortBy === 'codeAsc' || sortBy === 'codeDesc') {
             valueA = a.querySelector('li:nth-child(1)').textContent.split(': ')[1].toLowerCase();
             valueB = b.querySelector('li:nth-child(1)').textContent.split(': ')[1].toLowerCase();
