@@ -315,3 +315,24 @@ document.getElementById('saveButton').addEventListener('click', function () {
     document.body.removeChild(a);
 });
 
+
+
+// add image
+function addImage() {
+    // Get the image name from the input field
+    var imageName = document.getElementById("imageName").value;
+
+    // Create an image element
+    var imgElement = document.createElement("img");
+
+    // Set the id attribute for the image element
+    imgElement.id = "modify_image";
+
+    // Set the attributes for the image using the inputted name
+    imgElement.alt = "";
+    imgElement.src = "image/" + imageName + ".jpg";
+
+    // Append the image to the container
+    document.getElementById("imageContainer").innerHTML = ''; // Clear previous content
+    document.getElementById("imageContainer").appendChild(imgElement);
+}

@@ -1,6 +1,6 @@
 import subprocess
 from datetime import datetime
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, Comment
 
 
 def run_bash(bash_command):
@@ -14,7 +14,6 @@ def run_bash(bash_command):
 
 # Git pull
 # run_bash("git pull") 
-
 
 # enable_editable
 def enable_editable(file_name):
@@ -31,6 +30,29 @@ def enable_editable(file_name):
     if article_tag and 'contenteditable' not in article_tag.attrs:
         article_tag['contenteditable'] = 'true'
 
+    # Find the <!-- image --> comment
+    image_comment = soup.find(text=lambda text: isinstance(text, Comment) and 'image' in text)
+    
+    # Check if new_html_content already exists in the HTML file
+    new_content_already_exists = soup.find('label', {'for': 'imageName'})
+
+    if not new_content_already_exists:
+        
+        # Create the new HTML content to be added after the <!-- image --> comment
+        new_html_content = '''
+        <label for="imageName">Image Name:</label>
+        <input id="imageName" placeholder="Enter image name" type="text">
+        <button onclick="addImage()">Add Image</button>
+        <div id="imageContainer"><br></div>
+        '''
+
+        # Convert the new HTML content to BeautifulSoup object
+        new_content_soup = BeautifulSoup(new_html_content, 'html.parser')
+
+        # Insert the new content after the <!-- image --> comment
+        if image_comment and image_comment.parent:
+            image_comment.parent.insert_after(new_content_soup)
+
     # Create a new <button> tag and add it after the <article> element if it doesn't exist
     header_tag = soup.find('header')
     save_button_tag = soup.find('button', {'id': 'saveButton'})
@@ -39,7 +61,6 @@ def enable_editable(file_name):
         save_button_tag.string = 'Save'
         
         if header_tag:
-            # article_tag.insert_after(save_button_tag)
             header_tag.insert_before(save_button_tag)
 
     # Save the modified HTML content back to the file
