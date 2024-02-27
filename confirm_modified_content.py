@@ -43,6 +43,14 @@ def disable_editable_content(file_name):
     add_image_button_tag = soup.find('label', {'for': 'imageName'})
     if add_image_button_tag:
         add_image_button_tag.decompose()
+    # Find and remove the <button> tag with onclick="addImage()"
+    add_image_button_tag = soup.find('div', {'id': 'imageContainer'})
+    if add_image_button_tag:
+        add_image_button_tag.decompose()
+    # Find and remove the <button> tag with onclick="addImage()"
+    add_image_button_tag = soup.find('div', {'id': 'imageContainer2'})
+    if add_image_button_tag:
+        add_image_button_tag.decompose()
     # Save the modified HTML content back to the file
     with open(file_name, 'w') as file:
         file.write(str(soup))
@@ -51,11 +59,11 @@ for file_name in ['index.html','index_breed.html','index_last.html']:
     print(f"disenable_editable: {file_name}")
     disable_editable_content(file_name)
 
-#     run_bash(f"git add {file_name}") 
+    run_bash(f"git add {file_name}") 
 
-# # Commit
-# run_bash(f"git commit -m'modify content {datetime.now()}'")   
+# Commit
+run_bash(f"git commit -m'modify content {datetime.now()}'")   
 
-# # Push
-# run_bash("git push")  
-# print(f"change update")
+# Push
+run_bash("git push")  
+print(f"change update")

@@ -13,7 +13,7 @@ def run_bash(bash_command):
 
 
 # Git pull
-# run_bash("git pull") 
+run_bash("git pull") 
 
 # enable_editable
 def enable_editable(file_name):
@@ -30,28 +30,29 @@ def enable_editable(file_name):
     if article_tag and 'contenteditable' not in article_tag.attrs:
         article_tag['contenteditable'] = 'true'
 
-    # Find the <!-- image --> comment
-    image_comment = soup.find(text=lambda text: isinstance(text, Comment) and 'image' in text)
-    
+    image_comment = soup.find('article')
+
     # Check if new_html_content already exists in the HTML file
     new_content_already_exists = soup.find('label', {'for': 'imageName'})
 
     if not new_content_already_exists:
         
-        # Create the new HTML content to be added after the <!-- image --> comment
+        # Create the new HTML content to be added at the end of the <article> element
         new_html_content = '''
+        <div id = "imageContainer2" style="background-color: red;">
         <label for="imageName">Image Name:</label>
         <input id="imageName" placeholder="Enter image name" type="text">
         <button onclick="addImage()">Add Image</button>
-        <div id="imageContainer"><br></div>
+        </div>
+        <div id="imageContainer" style="background-color: red;"><br/></div>
         '''
 
         # Convert the new HTML content to BeautifulSoup object
         new_content_soup = BeautifulSoup(new_html_content, 'html.parser')
 
-        # Insert the new content after the <!-- image --> comment
-        if image_comment and image_comment.parent:
-            image_comment.parent.insert_after(new_content_soup)
+        # Append the new content to the end of the <article> element
+        if image_comment:
+            image_comment.append(new_content_soup)
 
     # Create a new <button> tag and add it after the <article> element if it doesn't exist
     header_tag = soup.find('header')

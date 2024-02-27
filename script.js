@@ -79,7 +79,7 @@ setInterval(showNextImage, 60000);
 
 // move image
 document.addEventListener('scroll', function () {
-    if (window.location.pathname.split('/').pop() === 'index_breed.html') {
+    if (window.location.pathname.split('/').pop() === 'hahahaha.html') {
         // Get the scroll position
         var scrollPosition = window.scrollY;
         
@@ -328,9 +328,12 @@ function addImage() {
     // Set the id attribute for the image element
     imgElement.id = "modify_image";
 
+    // Set the id attribute for the image element
+    // imgElement.classList = "animated-paragraph";
+
     // Set the attributes for the image using the inputted name
     imgElement.alt = "";
-    imgElement.src = "image/" + imageName + ".jpg";
+    imgElement.src = "image/" + imageName;
 
     // Append the image to the container
     document.getElementById("imageContainer").innerHTML = ''; // Clear previous content
